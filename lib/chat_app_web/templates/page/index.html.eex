@@ -1,0 +1,6 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Chat App" %></h1>
+  
+</section>
+
+
