@@ -6,7 +6,8 @@ defmodule ChatAppWeb.RoomController do
   alias ChatApp.Repo
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    rooms = Talk.list_rooms()
+    render(conn, "index.html", rooms: rooms)
   end
 
   def new(conn, _params) do
@@ -16,7 +17,7 @@ defmodule ChatAppWeb.RoomController do
 
   def create(conn, %{"room" => room_params}) do
     case Talk.create_room(room_params) do
-      {:ok, room} ->
+      {:ok, _room} ->
         conn
         |> put_flash(:info, "Room Created!")
         |> redirect(to: Routes.room_path(conn, :index))

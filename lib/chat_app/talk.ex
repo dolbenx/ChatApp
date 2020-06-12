@@ -2,7 +2,7 @@ defmodule ChatApp.Talk do
   alias ChatApp.Repo
   alias ChatApp.Talk.Room
 
-  def list_room do
+  def list_rooms do
     Repo.all(Room)
   end
 
