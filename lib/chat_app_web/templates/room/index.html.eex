@@ -16,7 +16,7 @@
             </div>
             <div class="page-header">
             <h2><small>Choose a room or make one</small></h2>
-            <a href="" class="btn btn-info">Create Room</a>
+            <%= link "Create Room", to: Routes.room_path(@conn, :new), class: "btn btn-primary" %>
             </div>
         </div>
     </div>
