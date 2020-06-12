@@ -26,4 +26,9 @@ defmodule ChatAppWeb.RoomController do
         render(conn, "new.html", changeset: changeset)
     end
   end
+
+  def show(conn, %{"id" => id}) do
+    room = Talk.get_room!(id)
+    render(conn, "show.html", room: room)
+  end
 end
