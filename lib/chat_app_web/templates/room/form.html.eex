@@ -1,4 +1,4 @@
-<%= form_for @changeset, Routes.room_path(@conn, :create), fn f -> %>
+<%= form_for @changeset, @action, fn f -> %>
 
 
   <div class="form-group">

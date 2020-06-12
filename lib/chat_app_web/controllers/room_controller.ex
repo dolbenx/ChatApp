@@ -33,7 +33,7 @@ defmodule ChatAppWeb.RoomController do
   end
 
   def edit(conn, %{"id" => id}) do
-    room = Talk.getroom!(id)
+    room = Talk.get_room!(id)
     changeset = Talk.change_room(room)
     render(conn, "edit.html", room: room, changeset: changeset)
   end

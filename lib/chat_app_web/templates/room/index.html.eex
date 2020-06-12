@@ -6,7 +6,7 @@
               <li class="list-group-item">
                 <%= link room.name, to: Routes.room_path(@conn, :show, room.id) %>
               </li>
-            <%= end %>
+            <% end %>
         </ul>
     </div> 
     <div class="col-md-9">
