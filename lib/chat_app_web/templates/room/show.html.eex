@@ -4,5 +4,5 @@
 <span> <%= @room.description %> </span>
 
 <div>
-    <%= link "Edit", to: Routes.room_path(@conn, edit, @room.id), class: "btn btn-default" %>
+    <%= link "Edit", to: Routes.room_path(@conn, :edit, @room.id), class: "btn btn-default" %>
 </div>
