@@ -1,7 +1,7 @@
-defmodule ChatAppWeb.RoomController do
+defmodule ChatAppWeb.GunController do
   use ChatAppWeb, :controller
 
-  alias ChatApp.Talk.Room
+  alias ChatApp.Talk.Gun
   alias ChatApp.Talk
   alias ChatApp.Repo
 
@@ -12,7 +12,7 @@ defmodule ChatAppWeb.RoomController do
 
   def new(conn, _params) do
     changeset = Room.changeset(%Room{}, %{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "gun_new.html", changeset: changeset)
   end
 
   def create(conn, room_params) do

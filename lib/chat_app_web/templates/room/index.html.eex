@@ -5,6 +5,11 @@
             <%= for room <- @rooms do %>
               <li class="list-group-item">
                 <%= link room.name, to: Routes.room_path(@conn, :show, room.id) %>
+                <%= if !is_nil(room.description) && room.description != "" do %>
+                    <div class="float-right text-info" data-toggle="tooltip" title="<%= room.description %>">
+                        <i class="fas fa-comment-medical"></i>
+                    </div>
+                <% end %>
               </li>
             <% end %>
         </ul>
@@ -12,7 +17,7 @@
     <div class="col-md-9">
         <div class="jumbotron">
             <div class="page-header">
-                <h2> welcome to Chat App</h2>
+                <h2> Welcome to Chat App</h2>
             </div>
             <div class="page-header">
             <h2><small>Choose a room or make one</small></h2>
