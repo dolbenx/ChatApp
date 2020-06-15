@@ -18,6 +18,10 @@ defmodule ChatAppWeb.Router do
 
     get "/", RoomController, :index
     resources("/rooms", RoomController, except: [:index])
+
+    get "/index", GunController, :index
+    get "/new", GunController, :new
+    post "/create_gun", GunController, :create
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,25 @@
+<h2> Add the gun </h2> 
+ 
+ <form action="<%= Routes.gun_path(@conn, :create)%>" method="POST">
+   <input type="hidden" name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token()%>"> 
+    <div class="form-group">
+        <label class="form-label" for="simpleinput">Name</label>
+        <input type="text" name="name" id="simpleinput"  value="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="simpleinput">Code</label>
+        <input type="text" name="gun_code" id="simpleinput"  value="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="simpleinput">Status</label>
+        <input type="text" name="status" id="simpleinput"  value="" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="simpleinput">Type</label>
+        <input type="text" name="type" id="simpleinput"  value="" class="form-control">
+    </div>
+
+    <div class="container-fluid">
+        <button type="submit" class="btn btn-outline-success btn-pills">create</button>
+    </div>
+</form>

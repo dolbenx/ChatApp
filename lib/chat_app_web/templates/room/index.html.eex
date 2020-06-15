@@ -22,6 +22,7 @@
             <div class="page-header">
             <h2><small>Choose a room or make one</small></h2>
             <%= link "Create Room", to: Routes.room_path(@conn, :new), class: "btn btn-primary" %>
+            <%= link "Create Gun", to: Routes.gun_path(@conn, :new), class: "btn btn-primary" %>
             </div>
         </div>
     </div>

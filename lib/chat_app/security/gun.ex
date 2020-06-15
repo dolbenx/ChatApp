@@ -1,6 +1,7 @@
 defmodule ChatApp.Security.Gun do
   use Ecto.Schema
   import Ecto.Changeset
+  alias ChatApp.Security.Gun
 
   schema "tbl_guns" do
     field :gun_code, :integer
@@ -13,7 +14,7 @@ defmodule ChatApp.Security.Gun do
 
   @doc false
   def changeset(gun, attrs) do
-    guns
+    gun
     |> cast(attrs, [:name, :type, :gun_code, :status])
     |> validate_required([:name, :type, :gun_code, :status])
   end

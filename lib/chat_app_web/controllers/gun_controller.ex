@@ -1,8 +1,8 @@
 defmodule ChatAppWeb.GunController do
   use ChatAppWeb, :controller
 
-  alias ChatApp.Talk.Gun
-  alias ChatApp.Talk
+  alias ChatApp.Security.Gun
+  alias ChatApp.Gun
   alias ChatApp.Repo
 
   def index(conn, _params) do
@@ -11,16 +11,15 @@ defmodule ChatAppWeb.GunController do
   end
 
   def new(conn, _params) do
-    changeset = Room.changeset(%Room{}, %{})
-    render(conn, "gun_new.html", changeset: changeset)
+    render(conn, "new.html")
   end
 
-  def create(conn, room_params) do
-    case Talk.create_room(room_params) do
-      {:ok, _room} ->
+  def create(conn, gun_params) do
+    case Gun.create_gun(gun_params) do
+      {:ok, _gun} ->
         conn
-        |> put_flash(:info, "Room Created!")
-        |> redirect(to: Routes.room_path(conn, :index))
+        |> put_flash(:info, "Gun Created!")
+        |> redirect(to: Routes.gun_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
